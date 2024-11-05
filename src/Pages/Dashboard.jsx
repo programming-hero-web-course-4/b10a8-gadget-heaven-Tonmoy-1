@@ -1,23 +1,50 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BannerHeading from "../Components/BannerHeading";
 import DashboardCard from "../Components/DashboardCard";
 import { getProducts, getWishlistProducts } from "../Utilitys";
+import modalImage from "../assets/Group.png";
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
   const [wishlists, setWishlists] = useState([]);
   const [view, setView] = useState("Cart");
-  // const [price, setPrice] = useState(0);
+  const [numbers, setNumbers] = useState([]);
+  const [winumbers, setWiNumbers] = useState([]);
 
+  const navigate = useNavigate();
+
+  // Fetch products when component mounts
   useEffect(() => {
     const favorites = getProducts();
     setProducts(favorites);
-    // const cartPrice = favorites.map((item) => item.price);
   }, []);
 
-  // sorting
+  // Calculate the sum of product prices for Cart
+  useEffect(() => {
+    const allCartPrice = [...products].map((item) => item.price);
+    setNumbers(allCartPrice);
+  }, [products]);
+
+  const sum = numbers.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+
+  // Calculate the sum of wishlist prices
+  useEffect(() => {
+    const allCartPrice = [...wishlists].map((item) => item.price);
+    setWiNumbers(allCartPrice);
+  }, [wishlists]);
+
+  const sum2 = winumbers.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+
+  // Sort products by price
   const handleSort = (sortBy) => {
-    if (sortBy == "price") {
+    if (sortBy === "price") {
       const sorted = [...products].sort((a, b) => b.price - a.price);
       setProducts(sorted);
     } else {
@@ -25,13 +52,26 @@ const Dashboard = () => {
     }
   };
 
+  // Fetch wishlist products when component mounts
   useEffect(() => {
     const wishproduct = getWishlistProducts();
     setWishlists(wishproduct);
   }, []);
 
+  // Handle view switch (Cart / WishList)
   const handleButton = (name) => {
     setView(name);
+  };
+
+  // Clear products from local storage and reset state
+  const clearLocalStorage = () => {
+    localStorage.removeItem("product");
+    setProducts([]);
+  };
+
+  // Navigate to home page
+  const clickHandler = () => {
+    navigate("/");
   };
 
   return (
@@ -40,7 +80,7 @@ const Dashboard = () => {
         <div className="w-8/12 text-center mx-auto p-12">
           <BannerHeading
             title={"Welcome To Dashboard"}
-            descripsion={
+            description={
               "Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
             }
           />
@@ -58,13 +98,14 @@ const Dashboard = () => {
           </button>
         </div>
       </div>
+
       <div className="w-full flex justify-between mx-auto mt-4 h-[100px] border-2 border-green-600">
         <div className="text-2xl mt-3 items-center justify-center font-bold p-4">
           {view}
         </div>
         <div className="flex gap-3 items-center text-2xl font-bold p-4">
-          <div></div>
-          {/* sort by price btn */}
+          <div>Total Price: {view === "Cart" ? sum : sum2} $</div>
+          {/* Sort by price button */}
           <div>
             <button
               onClick={() => handleSort("price")}
@@ -74,7 +115,12 @@ const Dashboard = () => {
             </button>
           </div>
           <div>
-            <button className="btn btn-outline">Purches</button>
+            <button
+              onClick={() => document.getElementById("modu").showModal()}
+              className="btn btn-outline"
+            >
+              Purchase
+            </button>
           </div>
         </div>
       </div>
@@ -90,6 +136,34 @@ const Dashboard = () => {
             ))
           : null}
       </div>
+
+      {/* Modal */}
+      <dialog id="modu" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <div className="text-center flex flex-col gap-2 p-3">
+            <div className="flex items-center justify-center text-center">
+              <img src={modalImage} alt="" />
+            </div>
+            <h3 className="font-bold text-lg">Payment Successfully!!</h3>
+            <hr />
+            <p className="py-4">Thanks for Purchasing</p>
+            <p>Total Price: {view === "Cart" ? sum : sum2} $</p>
+          </div>
+          <div className="modal-action items-center">
+            <form method="dialog">
+              <button
+                onClick={() => {
+                  clearLocalStorage();
+                  clickHandler();
+                }}
+                className="btn"
+              >
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 };
