@@ -1,7 +1,21 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import cart from "../assets/cart.png";
+import heart from "../assets/heart.png";
+import { getProducts } from "../Utilitys";
 
 const Navbar = () => {
+  const [first, setfirst] = useState([]);
+
+  useEffect(() => {
+    const cartProducts = getProducts();
+    setfirst(cartProducts);
+  }, []);
+
+  console.log(first);
+
+  const productItem = getProducts();
+
   return (
     <div className="navbar backdrop-blur-xl bg-white/30 px-10 z-50 fixed">
       <div className="navbar-start">
@@ -28,7 +42,7 @@ const Navbar = () => {
           >
             <NavLink
               className={({ isActive }) =>
-                ` ${isActive ? "text-warning" : "hover:text-warning"}`
+                ` ${isActive ? "text-[#9538E2]" : "hover:text-warning"}`
               }
               to="/"
             >
@@ -36,7 +50,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                ` ${isActive ? "text-warning" : "hover:text-warning"}`
+                ` ${isActive ? "text-[#9538E2]" : "hover:text-warning"}`
               }
               to="/statistics"
             >
@@ -44,7 +58,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                ` ${isActive ? "text-warning" : "hover:text-warning"}`
+                ` ${isActive ? "text-[#9538E2]" : "hover:text-warning"}`
               }
               to="/dashboard"
             >
@@ -52,13 +66,15 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
-        <NavLink className="btn btn-ghost text-xl">Gadget Heaven</NavLink>
+        <NavLink to="/" className=" font-bold  text-gray-500 text-2xl">
+          Gadget Heaven
+        </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-5">
+        <ul className="menu menu-horizontal font-bold text-md text-gray-500 px-1 gap-5">
           <NavLink
             className={({ isActive }) =>
-              ` ${isActive ? "text-warning" : "hover:text-warning"}`
+              ` ${isActive ? "text-[#9538E2]" : "hover:text-warning"}`
             }
             to="/"
           >
@@ -66,7 +82,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              ` ${isActive ? "text-warning" : "hover:text-warning"}`
+              ` ${isActive ? "text-[#9538E2]" : "hover:text-warning"}`
             }
             to="/statistics"
           >
@@ -74,7 +90,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              ` ${isActive ? "text-warning" : "hover:text-warning"}`
+              ` ${isActive ? "text-[#9538E2]" : "hover:text-warning"}`
             }
             to="/dashboard"
           >
@@ -82,12 +98,16 @@ const Navbar = () => {
           </NavLink>
         </ul>
       </div>
-      <div className="navbar-end flex gap-3">
-        <div className="h-5 w-5">
-          <img src={cart} alt="" />
+      <div className="navbar-end mr-6 flex gap-5">
+        <div>{productItem.length}</div>
+
+        <div className="relative border-2 border-gray-300 p-1 rounded-full ">
+          <img className="h-6 w-6  " src={cart} alt="" />
+          <p className="absolute top-[-18px] left-[27px]">0</p>
         </div>
-        <div>
-          <i className="fa-regular fa-heart"></i>
+        <div className="relative border-2 border-gray-300 p-1 rounded-full ">
+          <img className="h-6 w-6  " src={heart} alt="" />
+          <p className="absolute top-[-18px] left-[27px]">0</p>
         </div>
       </div>
     </div>

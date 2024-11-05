@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+
 import BannerHeading from "../Components/BannerHeading";
 import { addFavorite, addWishList } from "../Utilitys";
 
@@ -41,7 +42,6 @@ const ProductDetails = () => {
           ></BannerHeading>
         </div>
       </div>
-
       <div
         className="card w-10/12 mx-auto absolute border-2 border-[#9538E2] top-[25%] left-[8%] lg:card-side p-8
        bg-base-100 shadow-xl "

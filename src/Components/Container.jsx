@@ -17,7 +17,7 @@ const Container = () => {
             {categories.map((item) => (
               <NavLink
                 className={({ isActive }) =>
-                  `btn btn-outline ${isActive ? "text-warning" : ""}`
+                  `btn btn-outline ${isActive ? "bg-[#9538E2] text-white" : ""}`
                 }
                 key={item.id}
                 to={item.category}

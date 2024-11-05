@@ -6,7 +6,9 @@ const Home = () => {
   const categories = useLoaderData();
   return (
     <div>
-      <Banner></Banner>
+      <div className="mb-[320px]">
+        <Banner></Banner>
+      </div>
       <h1 className="text-3xl font-bold text-center my-10">
         Explore Cutting-Edge Gadgets
       </h1>

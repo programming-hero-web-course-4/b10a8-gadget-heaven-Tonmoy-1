@@ -86,30 +86,34 @@ const Dashboard = () => {
           />
           <button
             onClick={() => handleButton("Cart")}
-            className="btn mr-2 btn-outline text-white hover:text-black hover:bg-white"
+            className={` btn btn-outline px-6 mr-2 text-black ${
+              view === "Cart" ? "bg-yellow-300" : "bg-white "
+            }`}
           >
             Cart
           </button>
           <button
             onClick={() => handleButton("WishList")}
-            className="btn btn-outline text-white hover:text-black hover:bg-white"
+            className={` btn btn-outline mr-4 text-black ${
+              view === "WishList" ? "bg-yellow-300 " : "bg-white "
+            }`}
           >
             WishList
           </button>
         </div>
       </div>
 
-      <div className="w-full flex justify-between mx-auto mt-4 h-[100px] border-2 border-green-600">
-        <div className="text-2xl mt-3 items-center justify-center font-bold p-4">
+      <div className="w-full flex justify-between mx-auto mt-4 h-[100px] rounded-lg">
+        <div className="text-2xl mt-3 text-gray-500 items-center justify-center font-bold p-4">
           {view}
         </div>
-        <div className="flex gap-3 items-center text-2xl font-bold p-4">
+        <div className="flex gap-6 text-gray-500 items-center text-xl font-bold p-4">
           <div>Total Price: {view === "Cart" ? sum : sum2} $</div>
           {/* Sort by price button */}
           <div>
             <button
               onClick={() => handleSort("price")}
-              className="btn btn-outline"
+              className="btn text-[16px] bg-[#9538E2] text-white btn-outline"
             >
               Sort By Price
             </button>
@@ -117,7 +121,7 @@ const Dashboard = () => {
           <div>
             <button
               onClick={() => document.getElementById("modu").showModal()}
-              className="btn btn-outline"
+              className="btn text-[16px] text-white bg-[#9538E2] btn-outline"
             >
               Purchase
             </button>

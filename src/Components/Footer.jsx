@@ -1,27 +1,43 @@
 const Footer = () => {
   return (
-    <footer className="footer bg-neutral text-neutral-content p-10">
-      <nav>
-        <h6 className="footer-title">Services</h6>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
-      </nav>
-      <nav>
-        <h6 className="footer-title">Company</h6>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
-      </nav>
-      <nav>
-        <h6 className="footer-title">Legal</h6>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
-      </nav>
-    </footer>
+    <div className="py-[100px] border-2 backdrop-blur-2xl text-white bg-[#684088] border-gray-100">
+      <div className="container mx-auto text-center space-y-8">
+        <div>
+          <h1 className="mb-3 font-bold text-[2rem] ">Gadget Heaven</h1>
+          <p className="font-medium text-base  text-opacity-60">
+            Leading the way in cutting-edge technology and innovation.
+          </p>
+        </div>
+        <hr />
+        <div className="flex px-10  justify-evenly">
+          <div>
+            <h3 className="mb-4 font-bold text-[18px] ">Services</h3>
+            <div className="space-y-2 text-base font-thin text-opacity-60">
+              <p>Product Support</p>
+              <p>Order Tracking</p>
+              <p>Shipping & Delivery</p>
+              <p>Returns</p>
+            </div>
+          </div>
+          <div>
+            <h2 className="mb-4 font-bold text-[18px] ">Company</h2>
+            <div className="space-y-2 font-thin text-base text-opacity-60">
+              <p>About</p>
+              <p>Careers</p>
+              <p>Contact</p>
+            </div>
+          </div>
+          <div>
+            <p className="mb-4 font-bold text-[18px] ">Legal</p>
+            <div className="space-y-2 text-base font-thin  text-opacity-60">
+              <p>Terms of Service</p>
+              <p>Privacy Policy</p>
+              <p>Cookie Policy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

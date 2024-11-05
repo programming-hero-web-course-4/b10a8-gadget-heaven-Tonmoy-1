@@ -28,7 +28,11 @@ const AllCards = () => {
           <GagetCard key={item.product_id} item={item}></GagetCard>
         ))}
       </div>
-      <button className="btn btn-warning">view All</button>
+      <div className="text-center mt-[30px]">
+        <button className="btn bg-[#9538E2] text-white hover:bg-black">
+          view All
+        </button>
+      </div>
     </div>
   );
 };
