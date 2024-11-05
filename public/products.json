@@ -1,0 +1,308 @@
+[
+  {
+    "product_id": "L001",
+    "product_title": "Dell XPS 13",
+    "product_image": "https://i.ibb.co/W22J4Vk/Dell-XPS-13.jpg",
+    "category": "Laptops",
+    "price": 999,
+    "description": "The Dell XPS 13 combines power with elegance.",
+    "specification": [
+      "13.3-inch FHD display",
+      "Intel Core i7",
+      "16GB RAM",
+      "512GB SSD",
+      "Intel Iris Xe Graphics"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "L002",
+    "product_title": "HP Spectre x360",
+    "product_image": "https://i.ibb.co/TvDqfYT/HP-Spectre-x360.jpg",
+    "category": "Laptops",
+    "price": 1299,
+    "description": "A versatile laptop with a 360-degree hinge.",
+    "specification": [
+      "13.5-inch OLED display",
+      "Intel Core i7",
+      "16GB RAM",
+      "512GB SSD",
+      "Intel Iris Xe Graphics"
+    ],
+    "availability": false,
+    "rating": 4.6
+  },
+  {
+    "product_id": "L003",
+    "product_title": "Lenovo ThinkPad X1 Carbon",
+    "product_image": "https://i.ibb.co/br07R5W/Lenovo-Think-Pad-X1-Carbon.jpg",
+    "category": "Laptops",
+    "price": 1399,
+    "description": "Durable and lightweight with enterprise-level security.",
+    "specification": [
+      "14-inch FHD display",
+      "Intel Core i7",
+      "16GB RAM",
+      "1TB SSD",
+      "Intel Iris Xe Graphics"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "M001",
+    "product_title": "MacBook Air M2",
+    "product_image": "https://i.ibb.co/wY7nTgd/Mac-Book-Air-M2.jpg",
+    "category": "MacBooks",
+    "price": 1199,
+    "description": "Experience the power of Apple's M2 chip.",
+    "specification": [
+      "13.6-inch Retina display",
+      "Apple M2 chip",
+      "8GB RAM",
+      "256GB SSD",
+      "Up to 18 hours of battery life"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "M002",
+    "product_title": "MacBook Pro 14",
+    "product_image": "https://i.ibb.co/mHrxTfR/Mac-Book-Pro-14.jpg",
+    "category": "MacBooks",
+    "price": 1999,
+    "description": "Powerful performance for professionals.",
+    "specification": [
+      "14.2-inch Liquid Retina XDR display",
+      "Apple M1 Pro chip",
+      "16GB RAM",
+      "512GB SSD",
+      "Up to 17 hours of battery life"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "M003",
+    "product_title": "MacBook Pro 16",
+    "product_image": "https://i.ibb.co/zQdRvS3/Mac-Book-Pro-16.jpg",
+    "category": "MacBooks",
+    "price": 2499,
+    "description": "The ultimate laptop for creators.",
+    "specification": [
+      "16.2-inch Liquid Retina XDR display",
+      "Apple M1 Max chip",
+      "32GB RAM",
+      "1TB SSD",
+      "Up to 21 hours of battery life"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P001",
+    "product_title": "Apple iPhone 15 Pro Max",
+    "product_image": "https://i.ibb.co/PG9W5KL/Apple-i-Phone-15-Pro-Max.jpg",
+    "category": "iPhones",
+    "price": 1299,
+    "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+    "specification": [
+      "6.7-inch Super Retina XDR display",
+      "A17 Bionic chip",
+      "Triple-camera system (48MP Main, 12MP Telephoto, 12MP Ultrawide)",
+      "LiDAR Scanner",
+      "Up to 2TB storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P002",
+    "product_title": "Apple iPhone 15",
+    "product_image": "https://i.ibb.co/pyrBSZv/Apple-i-Phone-15.jpg",
+    "category": "iPhones",
+    "price": 999,
+    "description": "The perfect balance of performance and affordability.",
+    "specification": [
+      "6.1-inch Super Retina XDR display",
+      "A16 Bionic chip",
+      "Dual-camera system",
+      "Up to 512GB storage",
+      "5G capable"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P003",
+    "product_title": "Apple iPhone 14",
+    "product_image": "https://i.ibb.co/M22RJtV/Apple-i-Phone-14.jpg",
+    "category": "iPhones",
+    "price": 799,
+    "description": "Experience the next generation of iPhone.",
+    "specification": [
+      "6.1-inch Super Retina XDR display",
+      "A15 Bionic chip",
+      "Dual-camera system",
+      "Up to 512GB storage",
+      "5G capable"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P004",
+    "product_title": "Samsung Galaxy S23 Ultra",
+    "product_image": "https://i.ibb.co/rtKDFTg/Samsung-Galaxy-S23-Ultra.webp",
+    "category": "Phones",
+    "price": 1799,
+    "description": "Samsung's flagship with advanced camera features.",
+    "specification": [
+      "6.8-inch QHD+ display",
+      "Snapdragon 8 Gen 2",
+      "Quad-camera setup (200MP Main)",
+      "S Pen support",
+      "5000mAh battery"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P005",
+    "product_title": "Google Pixel 7 Pro",
+    "product_image": "https://i.ibb.co/zFNwdL6/Google-Pixel-7-Pro.jpg",
+    "category": "Phones",
+    "price": 899,
+    "description": "Google's flagship phone with AI-powered camera.",
+    "specification": [
+      "6.7-inch LTPO OLED display",
+      "Google Tensor G2",
+      "Triple-camera system",
+      "Face and fingerprint unlock",
+      "5000mAh battery"
+    ],
+    "availability": false,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P006",
+    "product_title": "OnePlus 11",
+    "product_image": "https://i.ibb.co/sQNz2bv/One-Plus-11.jpg",
+    "category": "Phones",
+    "price": 699,
+    "description": "Powerful performance with a smooth OxygenOS experience.",
+    "specification": [
+      "6.7-inch AMOLED display",
+      "Snapdragon 8 Gen 2",
+      "Triple-camera setup",
+      "5000mAh battery",
+      "80W fast charging"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "A001",
+    "product_title": "Apple AirPods Pro",
+    "product_image": "https://i.ibb.co/x2HSSYV/Apple-Air-Pods-Pro.jpg",
+    "category": "Accessories",
+    "price": 249,
+    "description": "Active Noise Cancellation with Transparency Mode.",
+    "specification": [
+      "Active Noise Cancellation",
+      "Spatial audio",
+      "Wireless charging",
+      "Up to 6 hours of listening time",
+      "Water and sweat resistant"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "A002",
+    "product_title": "Samsung Galaxy Buds 2 Pro",
+    "product_image": "https://i.ibb.co/RH7fgrP/Samsung-Galaxy-Buds-2-Pro.jpg",
+    "category": "Accessories",
+    "price": 229,
+    "description": "Premium sound with 360 Audio.",
+    "specification": [
+      "Noise Cancelling",
+      "360 Audio",
+      "Bluetooth 5.3",
+      "Water-resistant",
+      "Up to 5 hours battery life"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "A003",
+    "product_title": "Sony WH-1000XM5",
+    "product_image": "https://i.ibb.co/9vvHYHg/Sony-WH-1000-XM5.jpg",
+    "category": "Accessories",
+    "price": 399,
+    "description": "Industry-leading noise cancellation headphones.",
+    "specification": [
+      "Noise Cancelling",
+      "30-hour battery life",
+      "Bluetooth 5.2",
+      "Hi-Res Audio",
+      "Quick charge"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "SW001",
+    "product_title": "Apple Watch Series 8",
+    "product_image": "https://i.ibb.co/NZgPb71/Apple-Watch-Series-8.jpg",
+    "category": "Smart Watches",
+    "price": 399,
+    "description": "Stay connected, active, and healthy with the Apple Watch.",
+    "specification": [
+      "45mm Always-On Retina display",
+      "Blood Oxygen & ECG apps",
+      "Water resistant",
+      "Up to 18 hours of battery life",
+      "Fall detection"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "SW002",
+    "product_title": "Samsung Galaxy Watch 5",
+    "product_image": "https://i.ibb.co/xSH86yY/Samsung-Galaxy-Watch-5.jpg",
+    "category": "Smart Watches",
+    "price": 279,
+    "description": "Your health and fitness partner with advanced tracking.",
+    "specification": [
+      "44mm Super AMOLED display",
+      "Body composition analysis",
+      "Sleep tracking",
+      "GPS built-in",
+      "Up to 50 hours battery life"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "SW003",
+    "product_title": "Garmin Forerunner 955",
+    "product_image": "https://i.ibb.co/9vvHYHg/Garmin-Forerunner-955.jpg",
+    "category": "Smart Watches",
+    "price": 599,
+    "description": "The ultimate GPS smartwatch for athletes.",
+    "specification": [
+      "1.3-inch AMOLED display",
+      "Multi-band GPS",
+      "Heart rate monitoring",
+      "Up to 15 days battery life",
+      "Music storage"
+    ],
+    "availability": true,
+    "rating": 4.9
+  }
+]
