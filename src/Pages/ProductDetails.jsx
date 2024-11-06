@@ -1,20 +1,39 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-
 import BannerHeading from "../Components/BannerHeading";
-import { addFavorite, addWishList } from "../Utilitys";
+import {
+  addFavorite,
+  addWishList,
+  getProducts,
+  getWishlistProducts,
+} from "../Utilitys";
 
 const ProductDetails = () => {
   const { product_id } = useParams();
   const products = useLoaderData();
   const [productDeatil, setProductDeatil] = useState({});
+  const [disable, setDisable] = useState(false);
+  const [disable2, setDisable2] = useState(false);
+
   useEffect(() => {
     const singleData = products.find(
       (product) => product.product_id == product_id
     );
     setProductDeatil(singleData);
-  }, [product_id, products]);
+    const loacalData = getProducts();
+    const isExist = loacalData.find((item) => item.product_id == product_id);
+    if (isExist) {
+      setDisable(true);
+    }
+
+    const wiLoacalData = getWishlistProducts();
+
+    const isExist2 = wiLoacalData.find((item) => item.product_id == product_id);
+
+    if (isExist2) {
+      setDisable2(true);
+    }
+  }, [productDeatil.product_id, product_id, products]);
 
   const {
     product_image,
@@ -23,11 +42,16 @@ const ProductDetails = () => {
     availability,
     description,
     specification,
-  } = productDeatil;
+  } = productDeatil || {};
 
   const handleFavorite = (productDeatil) => {
     addFavorite(productDeatil);
+    setDisable(true);
+  };
+
+  const handleWi = (productDeatil) => {
     addWishList(productDeatil);
+    setDisable2(true);
   };
 
   return (
@@ -55,7 +79,9 @@ const ProductDetails = () => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{product_title}</h2>
-          <p>Price: {price}$</p>
+          <p className="text-lg font-semibold text-[#9538E2]">
+            Price: {price}$
+          </p>
           <div>
             <button
               className={`btn btn-sm btn-outline  ${
@@ -66,7 +92,7 @@ const ProductDetails = () => {
             </button>
           </div>
           <p>{description}</p>
-          <h1>Specification:</h1>
+          <h1 className="text-lg font-bold">Specification:</h1>
           <ul className="text-lg ml-12">
             {specification &&
               specification.map((item, i) => (
@@ -75,16 +101,48 @@ const ProductDetails = () => {
                 </li>
               ))}
           </ul>
-          <div>Ratings</div>
+          <div className="flex items-center gap-2">
+            Rating:
+            <div className="rating">
+              <input
+                type="radio"
+                name="rating-3"
+                className="mask mask-star-2 bg-orange-400"
+              />
+              <input
+                type="radio"
+                name="rating-3"
+                className="mask mask-star-2 bg-orange-400"
+                defaultChecked
+              />
+              <input
+                type="radio"
+                name="rating-3"
+                className="mask mask-star-2 bg-orange-400"
+              />
+              <input
+                type="radio"
+                name="rating-3"
+                className="mask mask-star-2 bg-orange-400"
+              />
+              <input
+                type="radio"
+                name="rating-3"
+                className="mask mask-star-2 bg-orange-400"
+              />
+            </div>
+          </div>
           <div>
             <button
-              onClick={() => addFavorite(productDeatil)}
-              className="btn btn-sm btn-outline"
+              disabled={disable}
+              onClick={() => handleFavorite(productDeatil)}
+              className="btn text-white bg-[#9538E2]  btn-outline"
             >
-              Add to card
+              Add to Cart
             </button>
             <button
-              onClick={() => addWishList(productDeatil)}
+              disabled={disable2}
+              onClick={() => handleWi(productDeatil)}
               to="/dashboard"
               className="btn ml-2 btn-outline"
             >

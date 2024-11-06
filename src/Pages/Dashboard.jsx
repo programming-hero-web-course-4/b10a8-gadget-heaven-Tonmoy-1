@@ -11,6 +11,19 @@ const Dashboard = () => {
   const [view, setView] = useState("Cart");
   const [numbers, setNumbers] = useState([]);
   const [winumbers, setWiNumbers] = useState([]);
+  const [cBtn, setcBtn] = useState();
+  useEffect(() => {
+    const isExist = products.length;
+    const isExistWi = wishlists.length;
+    if (
+      (view === "Cart" && isExist <= 0) ||
+      (view === "WishList" && isExistWi <= 0)
+    ) {
+      setcBtn(true);
+    } else {
+      setcBtn(false);
+    }
+  }, [products.length, view, wishlists.length]);
 
   const navigate = useNavigate();
 
@@ -63,10 +76,15 @@ const Dashboard = () => {
     setView(name);
   };
 
-  // Clear products from local storage and reset state
+  // Clear cart products from local storage and reset state
   const clearLocalStorage = () => {
     localStorage.removeItem("product");
     setProducts([]);
+  };
+  // Clear wishlist products from local storage and reset state
+  const clearWishLocalStorage = () => {
+    localStorage.removeItem("wishlist");
+    setWishlists([]);
   };
 
   // Navigate to home page
@@ -86,7 +104,7 @@ const Dashboard = () => {
           />
           <button
             onClick={() => handleButton("Cart")}
-            className={` btn btn-outline px-6 mr-2 text-black ${
+            className={` btn btn-outline  px-6 mr-2 text-black ${
               view === "Cart" ? "bg-yellow-300" : "bg-white "
             }`}
           >
@@ -120,6 +138,7 @@ const Dashboard = () => {
           </div>
           <div>
             <button
+              disabled={view === "Cart" ? cBtn : cBtn}
               onClick={() => document.getElementById("modu").showModal()}
               className="btn text-[16px] text-white bg-[#9538E2] btn-outline"
             >
@@ -158,6 +177,7 @@ const Dashboard = () => {
               <button
                 onClick={() => {
                   clearLocalStorage();
+                  clearWishLocalStorage();
                   clickHandler();
                 }}
                 className="btn"

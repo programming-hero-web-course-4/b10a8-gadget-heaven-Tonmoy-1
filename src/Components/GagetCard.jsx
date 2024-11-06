@@ -9,7 +9,7 @@ const GagetCard = ({ item }) => {
       </figure>
       <div className=" flex flex-col gap-3">
         <h1 className="text-lg font-bold"> {product_title}</h1>
-        <h3 className="font-bold text-gray-400">Price: {price}$</h3>
+        <h3 className="font-bold text-green-500">Price: {price}$</h3>
         <div>
           <Link
             to={`/productdetails/${product_id}`}

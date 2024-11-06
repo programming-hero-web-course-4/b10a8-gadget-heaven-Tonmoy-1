@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import GagetCard from "./GagetCard";
 
 const AllCards = () => {
   const { category } = useParams();
   const products = useLoaderData();
-
   const [items, setItems] = useState([]);
+  const navigate = useNavigate();
 
+  const navigateto = () => {
+    navigate("/store");
+  };
   useEffect(() => {
     if (category == "All") {
       setItems(products.slice(0, 6));
@@ -29,7 +32,10 @@ const AllCards = () => {
         ))}
       </div>
       <div className="text-center mt-[30px]">
-        <button className="btn bg-[#9538E2] text-white hover:bg-black">
+        <button
+          onClick={() => navigateto()}
+          className="btn bg-[#9538E2] text-white hover:bg-black"
+        >
           view All
         </button>
       </div>
