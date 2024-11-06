@@ -40,6 +40,7 @@ const ProductDetails = () => {
     product_image,
     product_title,
     price,
+    rating,
     availability,
     description,
     specification,
@@ -104,7 +105,7 @@ const ProductDetails = () => {
               ))}
           </ul>
           <div className="flex items-center gap-2">
-            Rating:
+            <div className="text-lg">Rating: {rating}</div>
             <div className="rating">
               <input
                 type="radio"
@@ -120,7 +121,7 @@ const ProductDetails = () => {
               <input
                 type="radio"
                 name="rating-3"
-                className="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-500"
               />
               <input
                 type="radio"
@@ -130,7 +131,7 @@ const ProductDetails = () => {
               <input
                 type="radio"
                 name="rating-3"
-                className="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-00"
               />
             </div>
           </div>
