@@ -32,12 +32,18 @@ const AllCards = () => {
         ))}
       </div>
       <div className="text-center mt-[30px]">
-        <button
-          onClick={() => navigateto()}
-          className="btn bg-[#9538E2] text-white hover:bg-black"
-        >
-          view All
-        </button>
+        {category === "Speakers" ? (
+          <div className="text-6xl text-[#9538E2] text-center ml-32 p-20">
+            No Data Found
+          </div>
+        ) : (
+          <button
+            onClick={() => navigateto()}
+            className="btn bg-[#9538E2] text-white hover:bg-black"
+          >
+            view All
+          </button>
+        )}
       </div>
     </div>
   );
