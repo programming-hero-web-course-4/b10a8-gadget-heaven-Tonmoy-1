@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import modalImage from "../assets/Group.png";
 import BannerHeading from "../Components/BannerHeading";
 import DashboardCard from "../Components/DashboardCard";
+import Title from "../Components/Title";
 import { getProducts, getWishlistProducts } from "../Utilitys";
-import modalImage from "../assets/Group.png";
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
@@ -94,6 +95,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Title title={"Dashboard-Gadgets Heaven"}></Title>
       <div className="rounded-lg bg-[#9538E2]">
         <div className="w-8/12 text-center mx-auto p-12">
           <BannerHeading

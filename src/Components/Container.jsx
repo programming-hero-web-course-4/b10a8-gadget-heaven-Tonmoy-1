@@ -20,7 +20,7 @@ const Container = () => {
                   `btn btn-outline ${isActive ? "bg-[#9538E2] text-white" : ""}`
                 }
                 key={item.id}
-                to={item.category}
+                to={`/products/${item.category}`}
               >
                 {item.category}
               </NavLink>

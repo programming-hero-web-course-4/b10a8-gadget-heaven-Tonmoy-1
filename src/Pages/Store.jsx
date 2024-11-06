@@ -1,11 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import BannerHeading from "../Components/BannerHeading";
 import GagetCard from "../Components/GagetCard";
+import Title from "../Components/Title";
 
 const Store = () => {
   const Products = useLoaderData();
   return (
     <div>
+      <Title title={"Store-Gadgets Heaven"}></Title>
       <div className="rounded-lg bg-[#9538E2] mb-5">
         <div className="w-8/12 text-center mx-auto p-12">
           <BannerHeading title={"Explore Amazing Product"} />

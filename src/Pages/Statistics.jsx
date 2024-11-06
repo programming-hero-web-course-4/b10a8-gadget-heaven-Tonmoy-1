@@ -1,5 +1,11 @@
+import Title from "../Components/Title";
+
 const Statistics = () => {
-  return <div>I am Statistics page</div>;
+  return (
+    <div>
+      <Title title={"Statistics-Gadgets Heaven"}></Title>I am Statistics page
+    </div>
+  );
 };
 
 export default Statistics;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import BannerHeading from "../Components/BannerHeading";
+import Title from "../Components/Title";
 import {
   addFavorite,
   addWishList,
@@ -55,7 +56,8 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="relative h-[950px] ">
+    <div className="relative h-[800px] ">
+      <Title title={"Product_Details-Gadgets Heaven"}></Title>
       <div className="w-11/12 mx-auto h-[450px] rounded-lg bg-[#9538E2] ">
         <div className="w-8/12 text-center mx-auto p-12 ">
           <BannerHeading
@@ -67,7 +69,7 @@ const ProductDetails = () => {
         </div>
       </div>
       <div
-        className="card w-10/12 mx-auto absolute border-2 border-[#9538E2] top-[25%] left-[8%] lg:card-side p-8
+        className="card w-10/12 mx-auto absolute border-2 border-[#9538E2] top-[32%] left-[8%] lg:card-side p-8
        bg-base-100 shadow-xl "
       >
         <figure>

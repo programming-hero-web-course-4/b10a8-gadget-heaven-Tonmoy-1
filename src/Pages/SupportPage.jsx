@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BannerHeading from "../Components/BannerHeading";
+import Title from "../Components/Title";
 
 const SupportPage = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +22,7 @@ const SupportPage = () => {
 
   return (
     <div>
+      <Title title={"Support-Gadgets Heaven"}></Title>
       <div className="rounded-lg bg-[#9538E2] mb-5">
         <div className="w-8/12 text-center mx-auto p-12">
           <BannerHeading title={"We Are Here To Support You :)"} />

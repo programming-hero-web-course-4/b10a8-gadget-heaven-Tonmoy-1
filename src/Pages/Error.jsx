@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import errorimg from "../assets/errorimage.png";
 
 const Error = () => {
+  const navigate = useNavigate();
+  const clickHandler = () => {
+    navigate("/");
+  };
   return (
     <div className="flex gap-3 p-12 justify-center ">
       <div>
@@ -14,7 +19,9 @@ const Error = () => {
           Look Like this Page is missing. If you need Any Help Please Go to Home
           Page
         </p>
-        <button className="btn btn-outline">Home</button>
+        <button onClick={clickHandler} className="btn btn-outline">
+          Home
+        </button>
       </div>
     </div>
   );
